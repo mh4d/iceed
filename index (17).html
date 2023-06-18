@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Iceed1's Gallery</title>
+  <style>
+    body {
+      background-color: #e2619f;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    h1 {
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0 -10px;
+    }
+    
+    .artwork {
+      flex: 0 0 calc(33.33% - 20px);
+      max-width: calc(33.33% - 20px);
+      margin: 10px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .artwork:hover {
+      transform: scale(1.05);
+    }
+    
+    .artwork img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    
+    .artwork button {
+      background-color: #004182;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+    
+    .artwork button:hover {
+      background-color: #555;
+    }
+    
+    @media screen and (max-width: 768px) {
+      .artwork {
+        flex: 0 0 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .artwork {
+        flex: 0 0 calc(100% - 20px);
+        max-width: calc(100% - 20px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Iceed1's Gallery</h1>
+  
+  <div class="gallery">
+    <div class="artwork">
+      <img src="Lil.jpg" alt="Lil">
+      <button onclick="downloadArtwork('Lil.jpg')">Download</button>
+    </div>
+    
+    <div class="artwork">
+      <img src="Clohe.jpg" alt="Clohe">
+      <button onclick="downloadArtwork('Clohe.jpg')">Download</button>
+    </div>
+    
+    <div class="artwork">
+      <img src="OC_N2-1.jpg" alt="Artwork 3">
+      <button onclick="downloadArtwork('OC_N2-1.jpg')">Download</button>
+    </div>
+    <div class="artwork">
+      <img src="LOGO-1.jpg" alt="Logo">
+    <button onclick="downloadArtwork('LOGO-1.jpg')">Download</button>
+  </div>
+  </div>
+  
+  <script>
+    function downloadArtwork(filename) {
+      var link = document.createElement('a');
+      link.href = filename;
+      link.download = filename;
+      link.click();
+    }
+  </script>
+</body>
+  </html>
+  
